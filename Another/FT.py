@@ -6,7 +6,12 @@ import time
 #browser = webdriver.Firefox()
 #browser.get('http://127.0.0.1:9900')
 
-class InventoryTest(unittest.TestCase):
+class <body>
+    <nav class="navbar navbar-default" style="background-color: #28a4c9">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="its me ralph">Roan Inventory List</a>
+        </div>
+    </nav>(unittest.TestCase):
 
    def setUp(self):
       self.browser = webdriver.Firefox()
