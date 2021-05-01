@@ -24,7 +24,7 @@ class InventoryTest(unittest.TestCase):
       self.assertIn('Inventory List', self.browser.title)
       headerText = self.browser.find_element_by_tag_name('h1').text
       self.assertIn('Roan Inventory', headerText)
-      inputName1 = self.browser.find_element_by_id('NewEntry1')
+      inputName1 = self.browser.find_element_by_id('idNewEntry')
       inputPlace1 = self.browser.find_element_by_id('newPlace1')
       btnConfirm = self.browser.find_element_by_id('btnConfirm')
       self.assertEqual(inputName1.get_attribute('placeholder'),'what is the item?')
