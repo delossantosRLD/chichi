@@ -3,6 +3,6 @@ from django.shortcuts import render
 
 # Create your views here.
 def MainPage(request):
-	return render(request,'mainpage.html',{'newPerson':request.POST.get('NewEntry1'),'newPlace':request.POST.get('newPlace1',''),})
+	return render(request,'mainpage.html',{'newPerson':request.POST.get('newEntry1'),'newPlace':request.POST.get('newPlace1',''),})
     #pass
     

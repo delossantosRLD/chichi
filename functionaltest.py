@@ -17,21 +17,25 @@ class InventoryTest(unittest.TestCase):
       #self.browser.get('http://localhost:8000')
       #self.assertIn('Inventory List', self.browser.title)
       #self.fail('Finish the test NOW!')
-      
+   
+   def check_rows_in_listtable(self, row_text):
+       table = self.browser.find_element_by_id('idListTable')
+       rows = table.find_elements_by_tag_name('tr')
+       self.assertIn(row_text, [row.text for row in rows])   
 
    def test_start_list_and_retrieve_it(self):
       self.browser.get('http:localhost:8000')
       self.assertIn('Inventory List', self.browser.title)
       headerText = self.browser.find_element_by_tag_name('h1').text
       self.assertIn('Roan Inventory', headerText)
-      inputName1 = self.browser.find_element_by_id('NewEntry1')
+      inputName1 = self.browser.find_element_by_id('newEntry')
       inputPlace1 = self.browser.find_element_by_id('newPlace1')
       btnConfirm = self.browser.find_element_by_id('btnConfirm')
       self.assertEqual(inputName1.get_attribute('placeholder'),'what is the item?')
-      NewEntry1 = self.browser.find_element_by_id('NewEntry1')
-      NewEntry1.click()
+      newEntry1 = self.browser.find_element_by_id('newEntry1')
+      newEntry1.click()
       time.sleep(1)
-      NewEntry1.send_keys('Coffee')
+      newEntry1.send_keys('Coffee')
       time.sleep(1)
       newPlace1 = self.browser.find_element_by_id('newPlace1')
       newPlace1.click()
@@ -40,6 +44,8 @@ class InventoryTest(unittest.TestCase):
       time.sleep(1)
       btnConfirm = self.browser.find_element_by_id('btnConfirm')
       btnConfirm.click()
+      time.sleep(2)
+      self.check_rows_in_listtable('1: None in Essential')
       newEntry2 = self.browser.find_element_by_id('newEntry2')
       newEntry2.click()
       time.sleep(1)
@@ -48,15 +54,13 @@ class InventoryTest(unittest.TestCase):
       newPlace2 = self.browser.find_element_by_id('newPlace2')
       newPlace2.click()
       time.sleep(1)
-      newPlace2.send_keys('12.00')
+      newPlace2.send_keys('pack')
       time.sleep(1)
       btnConfirm = self.browser.find_element_by_id('btnConfirm')
-      time.sleep(1)
       btnConfirm.click()
-      table = self.browser.find_element_by_id('idListTable')
-      rows = table.find_elements_by_tag_name('tr')
-      self.assertIn('1: Nescafe Twin in Essential', [row.text for row in rows])
-      self.assertIn('2: coffee in 12.00', [row.text for row in rows])
+      time.sleep(2)
+      self.check_rows_in_listtable('2: Nescafe Twin in pack')
+      
       
 if __name__ == '__main__':
    unittest.main(warnings='ignore')
