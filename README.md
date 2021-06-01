@@ -1,1 +1,2 @@
-This repository is for the Projectlist web application project
+# inventory-management
+This is a inventory management system
