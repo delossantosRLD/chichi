@@ -1,2 +1,2 @@
-# inventory-management
-This is a inventory management system
+# inventory_management
+This is the repository of the 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ralph Home</title>
+  </head>
+
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.min.css' %}"/>
+
+  <body>
+
+    <nav class="navbar navbar-expand navbar-light bg-e3f2fd">
+  <a class="navbar-brand" href="#">Inventory Monitoring</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Product <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Order <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Supplier <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Delivery <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+
+      
+  </div>
+
+    </ul>
+  </div>
+     
+    </ul>
+    
+  </div>
+</nav>
+
+    <br>
+    <div class="container">
+
+      {% block body %}
+
+
+      {% endblock%}
+
+    </div>
+
+  </body>
+</html>
