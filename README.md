@@ -1,2 +1,1 @@
-# inventory_management
-This is the repository of the 
+this is simple project 

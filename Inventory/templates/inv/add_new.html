@@ -1,4 +1,4 @@
-<!--{% extends 'inv/base.html' %}
+{% extends 'inv/base.html' %}
 
 {% block body %}
 
@@ -6,7 +6,7 @@
     <form method="POST">
       {% csrf_token %}
 
-      <h4>{{ header }}</h4>
+      <h3><u>Add Item</u></h3>
 
       {% for field in form %}
       <div class="form-group row">

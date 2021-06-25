@@ -14,7 +14,7 @@ def display_laptops(request):
     items = Laptops.objects.all()
     context = {
         'items': items,
-        'header': 'Laptops',
+        'header': 'laptops',
     }
     return render(request, 'inv/index.html', context)
 
